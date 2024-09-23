@@ -5,7 +5,7 @@ Sigue estos pasos para ejecutar el proyecto localmente:
 ### 1. Clonar el repositorio
 
 ```
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/RyanSweden03/python-code-lima
 cd tu-repositorio
 
 ```
