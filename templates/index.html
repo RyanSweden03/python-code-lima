@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de empleados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Dashboard</h1>
+
+        <h2>Age vs Salary Bar Chart</h2>
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ bar_chart }}" alt="Age vs Salary Bar Chart">
+        </div>
+
+        <h2>Employee Distribution by City</h2>
+        <div class="chart-container">
+            <img src="data:image/png;base64,{{ pie_chart }}" alt="City Distribution Pie Chart">
+        </div>
+
+        <h2>Employee Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in data %}
+                <tr>
+                    <td>{{ employee['id'] }}</td>
+                    <td>{{ employee['name'] }}</td>
+                    <td>{{ employee['age'] }}</td>
+                    <td>{{ employee['city'] }}</td>
+                    <td>{{ employee['salary'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <footer>
+            <p>Ryan Sweden &copy; 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
